@@ -1,0 +1,58 @@
+---
+title       : Cars and Earthquakes
+subtitle    : Data Web App
+author      : Spencer Chan
+job         : 
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : [mathjax]            # {mathjax, quiz, bootstrap}
+mode        : selfcontained # {standalone, draft}
+knit        : slidify::knit2slides
+---
+
+## Cars and Earthquakes
+
+Information is everything nowadays, but handling the raw data is only half the necessary work.
+
+Being able to present data in a presentable form is key in using the data for real world application.
+
+--- .class #id 
+
+## Cars
+
+The mtcars data set contains the information of 32 different vehicles. This app lets you easily view which vehicles contain which number of cylinders by simply changing the input.
+
+
+--- .class #id 
+
+## Cars
+
+The following code is the function which sorts out the vehicles with the matching number of cylinders
+
+```{r}
+cylfunction <- function(Value) rownames(mtcars[mtcars$cyl == Value,])
+```
+
+
+--- .class #id 
+
+## Earthquakes
+
+The quakes dataset is a list of 1000 earthquakes, containing location and magnitude values. This app lets you examine the distribution, and guess a mean value for the magnitude while providing a Mean Squared Error on your predicted mean.
+
+---. class #id
+
+## Earthquakes
+
+The following is the formula used to calculate the MSE, followed by the code for the calculation and the display.
+
+$$MSE = (x - \mu)^2$$
+
+```{r}
+
+# mse <- mean((quakes$mag - guess)^2)
+# text(6,150, paste(" mu = ", guess))
+# text(6,140, paste(" MSE = ", round(mse, 2)))
+
+```
